@@ -1,0 +1,33 @@
+{
+  "name": "bot-dashboard",
+  "version": "1.0.0",
+  "description": "A dashboard for monitoring bot uptime & events",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "watch:css": "postcss src/styles/globals.css -o src/assets/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Garlicvideos/bot-dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Garlicvideos/bot-dashboard/issues"
+  },
+  "homepage": "https://github.com/Garlicvideos/bot-dashboard#readme",
+  "dependencies": {
+    "next": "^12.1.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.25",
+    "@types/react": "^18.0.6",
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.24"
+  }
+}
