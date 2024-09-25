@@ -1,4 +1,6 @@
+//-- Import required libraries --//
 import { useState } from "react";
+import Api from "../../utils/api";
 import Button from "../Button";
 import TextInput from "../TextInput";
 
@@ -7,6 +9,9 @@ const LoginForm = () => {
   //-- Event hooks --//
   const [username, updateUsername] = useState("");
   const [password, updatePassword] = useState("");
+  
+  const [usernameHasError, updateUsernameHasError] = useState(false);
+  const [passwordHasError, updatePasswordHasError] = useState(false);
 
   //-- Event handlers --//
   //Handles username input change
@@ -29,6 +34,37 @@ const LoginForm = () => {
     //Logs the input received
     console.log("username: ", username);
     console.log("password: ", password);
+
+    //Resets the errored state of both inputs
+    updateUsernameHasError(false);
+    updatePasswordHasError(false);
+
+    //Sanitises inputs
+    const trimmedUsername = username.trim();
+    const trimmedPassword = password.trim();
+
+    //Checks if the username input field is empty
+    if (trimmedUsername === "") {
+      //The username provided is invalid
+      updateUsernameHasError(true);
+      return;
+    }
+
+    //Checks if the password input field is empty
+    if (trimmedPassword === "") {
+      //The password provided is invalid
+      updatePasswordHasError(true);
+      return;
+    }
+
+    //All checks passed, send a request to the server
+    Api.authenticateUser(trimmedUsername, trimmedPassword, (err: Object, response: Object) => {
+      //Checks if an error occured
+      if (err) {
+        //An error occured, determine what the error was
+        
+      }
+    });
   };
 
   return (
@@ -43,6 +79,7 @@ const LoginForm = () => {
               defaultValue={username}
               onChange={handleUsernameChange}
               className="mt-2 w-full"
+              hasError={usernameHasError}
             />
           </label>
         </div>
@@ -55,6 +92,7 @@ const LoginForm = () => {
               defaultValue={password}
               onChange={handlePasswordChange}
               className="mt-2 w-full"
+              hasError={passwordHasError}
             />
           </label>
         </div>
