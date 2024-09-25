@@ -1,9 +1,9 @@
 //Import global css file
-import '../assets/css/global.css';
+import "../assets/css/global.css";
 
 //Create the app
 function MyApp({ Component, pageProps }) {
-	return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 
 //Export the app
