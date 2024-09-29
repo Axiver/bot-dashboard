@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "description": "A dashboard for monitoring bot uptime & events",
   "scripts": {
-    "dev": "nx run-many -t dev -p @inc/client @inc/server",
+    "dev": "nx run-many -t dev -p @bot-dashboard/client",
     "test": "nx run-many -t test",
     "build": "nx run-many -t build",
-    "build:packages": "nx run-many -t build -p @inc/ui @inc/events @inc/s3-simplified @inc/errors @inc/send-in-blue @inc/utils @inc/db @inc/db-enums --parallel=4",
+    "build:packages": "nx run-many -t build -p @bot-dashboard/ui @bot-dashboard/events @bot-dashboard/s3-simplified @bot-dashboard/errors @bot-dashboard/send-in-blue @bot-dashboard/utils @bot-dashboard/db @bot-dashboard/db-enums --parallel=4",
     "cb": "nx run-many -t clean",
     "ci": "pnpm install --frozen-lockfile",
     "clean": "pnpx rimraf --glob */**/node_modules && pnpx rimraf node_modules",
     "lint": "nx run-many -t lint",
-    "preinstall": "npx only-allow pnpm",
-    "postinstall": "pnpm prisma:generate && pnpm enum:copy && echo Please restart your VSCode to make your Prisma Client work."
+    "preinstall": "npx only-allow pnpm"
   },
   "author": "Axiver",
   "devDependencies": {

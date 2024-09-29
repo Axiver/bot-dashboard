@@ -18,11 +18,25 @@
   },
   "homepage": "https://github.com/Garlicvideos/bot-dashboard#readme",
   "dependencies": {
+    "@bot-dashboard/configs": "workspace:*",
+    "@bot-dashboard/db": "workspace:*",
+    "@bot-dashboard/errors": "workspace:*",
+    "@bot-dashboard/ui": "workspace:*",
+    "@mui/icons-material": "5.11.16",
+    "@mui/material": "5.11.14",
+    "@mui/x-date-pickers": "6.11.1",
+    "@prisma/nextjs-monorepo-workaround-plugin": "5.20.0",
     "axios": "^0.27.2",
-    "next": "^12.1.5",
+    "luxon": "3.5.0",
+    "next": "^13.2.4",
+    "next-auth": "^4.20.1",
+    "next-connect": "0.13.0",
+    "prisma": "^5.20.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "typescript": "^4.6.3"
+    "react-query": "3.39.3",
+    "typescript": "^4.6.3",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/node": "^17.0.25",
